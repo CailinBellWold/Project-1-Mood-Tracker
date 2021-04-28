@@ -1,6 +1,8 @@
 # Project-01
 First Bootcamp Project!
 
+## Project Members
+Cailin Bell Wold, Chris Abiva, Mohamed Bassiouni and Tiffany Washke
 
 ## Github Links
 
