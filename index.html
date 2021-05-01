@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bulma CSS Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <!-- Google Font Link -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+    <!-- CSS Style Link -->
+    <link rel="stylesheet" href="Assets/CSS/style.css">
+    <!-- Debugger commented out-->
+    <!-- <link rel="stylesheet" href="Assets/CSS/debug.css"> -->
+    <title>Mood Tracker</title>
+</head>
+<body>
+    <header>
+        <div class="hero">
+            <div class="welcome">
+                <h1>Welcome Friends</h1>
+                <h2 class="time"></h2> 
+            </div>
+        </div>
+    </header>
+        <section class="container">
+            <div class="columns is-flex-wrap is-justify-content-space-evenly">
+                <div id="feeling" class="box is-align-self-center p-6 mx-3">
+                    <div class="subtitle is-4">How Are You Feeling Today</div>
+                    <div class="buttons are-large">
+                    <button class="angry button is-medium is-fullwidth">Angry</button>
+                    <button class="happy button is-medium is-fullwidth">Happy</button>
+                    <button class="sad button is-medium is-fullwidth">Sad</button>
+                    <button class="calm button is-medium is-fullwidth">Calm</button>
+                    </div>  
+                </div>
+                <div id="weather" class="box is-align-self-center mx-2 p-6">
+                    <div class="subtitle is-4">What is the Weather Like?</div>
+                    <div class="buttons are-large">
+                    <button class="sunny button is-medium is-fullwidth">☀️</button>
+                    <button class="cloudy button is-medium is-fullwidth">☁️</button>
+                    <button class="raining button is-medium is-fullwidth">☔️</button>
+                    <button class="snowing button is-medium is-fullwidth">❄️</button>
+                    </div>  
+                </div>
+                <div id="suggestions" class="image is-align-self-center p-6">
+                    <div class="subtitle is-3">Suggestions For You
+                    <div class="suggestions">
+                        <figure class="image">
+                            <img src="Assets/images/suggestions.jpeg">
+                        </figure>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section>
+            <div id="past-history">
+                <h2><a href="history.html" target="_blank" ><span class="tag is-light is-large">
+                    A look back into the past...</span></a>
+            </div>
+        </section>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+            <strong>Mood Tracker</strong> by 
+                <a href="https://github.com/CailinBellWold" target="_blank">
+                    Cailin Bell Wold</a>, 
+                <a href="https://github.com/Chabivz" target="_blank">
+                    Chris Abiva</a>,
+                <a href="https://github.com/mohamedB-01"target="_blank">
+                    Mohamed Bassioun</a>,
+                <a href="https://github.com/twashke" target="_blank">
+                    Tiffany Washke</a>.<br>
+            </p>
+        </div>
+    </footer>
+    <!-- JQuery Source -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Moment.js Source -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- Script JS File -->
+    <script src="Assets/JS/script.js"></script>
+</body>
+</html>
