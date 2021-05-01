@@ -24,12 +24,12 @@ First Bootcamp Project!
 
 ## Installation
 
-- Open [Mood Tracker](https://chabivz.github.io/Project-01/) 
+- Open [Mood Tracker](https://chabivz.github.io/Daily-Checkins/) 
 - Or, open index.html in the internet browser.
 
 ## Usage
 
-- Go to [Deployed Github Page](https://chabivz.github.io/Project-01/)
+- Go to [Deployed Github Page](https://chabivz.github.io/Daily-Checkins/)
 - Project Usage
 - Project Usage
 - Project Usage
