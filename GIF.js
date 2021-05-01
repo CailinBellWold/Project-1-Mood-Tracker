@@ -9,7 +9,7 @@ var happyBtn = document.querySelector("#happy");
 
 angryBtn.addEventListener('click',function (){
     
-    var url = 'https://api.giphy.com/v1/gifs/search?api_key=c68nPrb4NwGEUnzP044FJ97Bl3RqTXi7&limit=10&rating=g&q=angry';
+    var url = 'https://api.giphy.com/v1/gifs/search?api_key=c68nPrb4NwGEUnzP044FJ97Bl3RqTXi7&limit=30&rating=g&q=angry';
      
    
 
@@ -46,7 +46,7 @@ fetch(url)
 // function to generate happy GIF 
 happyBtn.addEventListener('click',function (){
   
-  var url = 'https://api.giphy.com/v1/gifs/search?api_key=c68nPrb4NwGEUnzP044FJ97Bl3RqTXi7&limit=10&rating=g&q=happy';
+  var url = 'https://api.giphy.com/v1/gifs/search?api_key=c68nPrb4NwGEUnzP044FJ97Bl3RqTXi7&limit=30&rating=g&q=happy';
    
  
 
@@ -84,7 +84,7 @@ for (var i = 0; i < content.data.length; i++) {
 // function to generate sad GIF 
 sadBtn.addEventListener('click',function (){
   
-  var url = 'https://api.giphy.com/v1/gifs/search?api_key=c68nPrb4NwGEUnzP044FJ97Bl3RqTXi7&limit=10&rating=g&q=sad';
+  var url = 'https://api.giphy.com/v1/gifs/search?api_key=c68nPrb4NwGEUnzP044FJ97Bl3RqTXi7&limit=30&rating=g&q=sad';
    
  
 
@@ -120,7 +120,7 @@ for (var i = 0; i < content.data.length; i++) {
 // function to generate calm GIF 
 calmBtn.addEventListener('click',function (){
  
-  var url = 'https://api.giphy.com/v1/gifs/search?api_key=c68nPrb4NwGEUnzP044FJ97Bl3RqTXi7&limit=10&rating=g&q=calm';
+  var url = 'https://api.giphy.com/v1/gifs/search?api_key=c68nPrb4NwGEUnzP044FJ97Bl3RqTXi7&limit=30&rating=g&q=calm';
    
  
 
