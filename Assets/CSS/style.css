@@ -1,0 +1,100 @@
+* {
+    font-family: 'Pangolin', cursive; 
+}
+
+.welcome {
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+    background-image: url("../images/rainbow.jpeg");
+    background-size: cover;
+    height: 200px;
+}
+
+h1 {
+    font-size: 4rem;   
+}
+
+h2 {
+    font-size: 2rem;  
+}
+
+.container {
+    text-align: center;
+}
+
+#suggestions {
+    max-width: auto;
+    max-height: auto;
+}
+
+
+.angry {
+    background-image: linear-gradient(red, rgb(139, 20, 20));
+    font-weight: bolder;
+    color: white;
+    border: 1px solid black
+}
+
+.happy {
+    background-image: linear-gradient(rgb(255, 255, 0), rgb(226, 226, 66));
+    font-weight: bolder;
+    color: black;
+    border: 1px solid black;
+}
+
+.sad {
+    background-image: linear-gradient(blue, darkblue);
+    font-weight: bolder;
+    color: white;
+    border: 1px solid black;
+}
+
+.calm {
+    background-image: linear-gradient(rgb(0, 255, 0), rgb(60, 190, 60));
+    font-weight: bolder;
+    color: black;
+    border: 1px solid black;
+}
+
+.angry:hover {
+    color: black;
+}  
+
+.sad:hover {
+    color: rgb(152, 221, 230);
+}
+
+.happy:hover {
+    color: rgb(180, 172, 172);
+}  
+
+.calm:hover {
+    color: rgb(0, 99, 0);
+}
+
+.sunny {
+    background-color: skyblue;
+    border: 1px solid black;
+}
+
+.cloudy {
+    background-color: lightgray;
+    border: 1px solid black;
+}
+
+.raining {
+    background-color: lightblue;
+    border: 1px solid black;
+}
+
+.snowing {
+    background-color: whitesmoke;
+    border: 1px solid black;
+}
+
+#past-history {
+    position: fixed;
+    bottom: 0;
+    padding-left: 100px;
+}
