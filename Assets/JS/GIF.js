@@ -81,6 +81,8 @@ for (var i = 0; i < content.data.length; i++) {
 });
 
 
+
+
 // function to generate calm GIF 
 calmBtn.addEventListener('click',function (){
  
