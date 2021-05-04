@@ -9,3 +9,20 @@ function displayDate() {
 }
 //  Run display date function
 displayDate();
+
+
+$("#sunny").on("click", function() {
+    $("body").removeClass("gray").removeClass("blue").removeClass("gray-white").addClass("yellow")
+});
+
+$("#cloudy").on("click", function() {
+    $("body").removeClass("yellow").removeClass("blue").removeClass("gray-white").addClass("gray")
+});
+
+$("#raining").on("click", function() {
+    $("body").removeClass("yellow").removeClass("gray").removeClass("gray-white").addClass("blue")
+});
+
+$("#snowing").on("click", function() {
+    $("body").removeClass("yellow").removeClass("gray").removeClass("blue").addClass("gray-white")
+});
