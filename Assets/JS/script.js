@@ -10,7 +10,7 @@ function displayDate() {
 //  Run display date function
 displayDate();
 
-
+// Event Listeners to change color for background depending on button pushed
 $("#sunny").on("click", function() {
     $("body").removeClass("gray").removeClass("blue").removeClass("gray-white").addClass("yellow")
 });

@@ -58,12 +58,11 @@ function getSadResponse() {
     })
 }; 
 
-// Event Listeners for Sad, Next, Close Modal
-// Sad Button
+// Sad Button Event Listener
 sadBtn.on("click", getSadResponse);
-// Next Button - piles new ones on top of previous
+// Next Button - piles new ones on top of previous Event Listener
 nextBtn.on("click", getSadResponse);
-// Close Modal function
+// Close Modal function Event Listener
 closeModal.on("click", function() {
     moduleActive.removeClass("is-active");
     location.reload();
