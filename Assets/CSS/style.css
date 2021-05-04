@@ -2,6 +2,21 @@
     font-family: 'Pangolin', cursive; 
 }
 
+:root {
+    --c--black: #000000;
+    --c-white: #ffffff;
+    --c-red: #f00314;
+    --c-redor: #f84217;
+    --c-orange: #ff8019;
+    --c-orangeyell: #fdb30e;
+    --c-yellow: #fae603;
+    --c-green: #28e10a;
+    --c-lblue: #3bb5ff;
+    --c-blue: #0500c7;
+    --c-purple: #5c03fa;
+    --c-purplepink: #de00ed;
+}
+
 .welcome {
     text-align: center;
     color: white;
@@ -27,7 +42,6 @@ h2 {
     max-width: auto;
     max-height: auto;
 }
-
 
 .angry {
     background-image: linear-gradient(red, rgb(139, 20, 20));
@@ -99,3 +113,32 @@ h2 {
     padding-left: 100px;
 }
 
+.yellow {
+    background-image: linear-gradient(to bottom right, yellow, rgb(255, 255, 180));
+}
+
+.gray {
+    background-image: linear-gradient(to bottom right, rgb(122, 122, 122), gray);
+}
+
+.blue {
+    background-image: linear-gradient(to bottom right, blue, lightblue);
+}
+
+.gray-white {
+    background-image: linear-gradient(to bottom right, rgb(194, 192, 192), rgb(236, 236, 236));
+}
+
+.cbw-card-footer {
+    background-color: var(--c-redor);
+    color: var(--c-blue);
+    border-radius: .25em;
+}
+
+.cbw-card-header {
+    background-color: var(--c-orangeyell);
+}
+
+.cbw-card-header-txt {
+    color: var(--c-redor) !important;
+}
