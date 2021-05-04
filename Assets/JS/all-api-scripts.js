@@ -47,7 +47,7 @@ function getAngryResponse() {
     .then(function (data) {
         var joke = data.joke;
         $("#content").append("<h3>" + joke + "<h3>");
-        moduleActive.addClass("is-active"); 
+        moduleActive.addClass("is-active angryAPI");
     })
 
     fetch(giphyAngryURL, {
@@ -80,7 +80,7 @@ function getHappyResponse() {
     .then(function (data) {
         var joke = data.joke;
         $("#content").append("<h3>" + joke + "<h3>");
-        moduleActive.addClass("is-active"); 
+        moduleActive.addClass("is-active happyAPI"); 
     })
 
     fetch(giphyHappyURL, {
@@ -113,7 +113,7 @@ function getSadResponse() {
     .then(function (data) {
         var joke = data.joke;
         $("#content").append("<h3>" + joke + "<h3>");
-        moduleActive.addClass("is-active"); 
+        moduleActive.addClass("is-active sadAPI"); 
     })
 
     fetch(giphySadURL, {
@@ -148,7 +148,7 @@ function getCalmResponse() {
         var author = data.quote.author;
         $("#content").append("<h3>" + '"' + bodyQuote + '"' + "<h3>");
         $("#content").append("<h4>" + "-" + author + "<h4>");
-        moduleActive.addClass("is-active"); 
+        moduleActive.addClass("is-active calmAPI"); 
     })
 
     fetch(giphyCalmURL, {
@@ -168,15 +168,18 @@ function getCalmResponse() {
     })
 }; 
 
-    // Next Button - piles new ones on top of previous Event Listener
-    nextBtn.on("click", getSadResponse); // I think we can set a reset that is a 2-part (reset, then run appropriate emotion response)
+if (moduleActive.classList.contains('angryAPI')) {
+    nextBtn.on("click", getAngryResponse);
+} else if (moduleActive.classList.contains('happyAPI')) {
+    nextBtn.on("click", getHappyResponse);
+} else if (moduleActive.classList.contains('sadAPI')) {
+    nextBtn.on("click", getSadResponse);
+} else {
+    nextBtn.on("click", getCalmResponse);
+};
 
 // Close Modal function Event Listener
 closeModal.on("click", function() {
-    moduleActive.removeClass("is-active");
+    moduleActive.removeClass("is-active angryAPI happyAPI sadAPI calmAPI");
     location.reload();
 });
-
-
-
-
