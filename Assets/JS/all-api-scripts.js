@@ -30,7 +30,7 @@ calmBtn.addEventListener('click', getCalmResponse);
 
 // Modal
 let textInput = $(".text-one");
-let moduleActive = $(".modal")
+let modalActive = $(".modal")
 let closeModal = $(".modal-close");
 let nextBtn = $("#next");
 
@@ -47,7 +47,7 @@ function getAngryResponse() {
     .then(function (data) {
         var joke = data.joke;
         $("#content").append("<h3>" + joke + "<h3>");
-        moduleActive.addClass("is-active angryAPI");
+        modalActive.addClass("is-active angryAPI");
     })
 
     fetch(giphyAngryURL, {
@@ -80,7 +80,7 @@ function getHappyResponse() {
     .then(function (data) {
         var joke = data.joke;
         $("#content").append("<h3>" + joke + "<h3>");
-        moduleActive.addClass("is-active happyAPI"); 
+        modalActive.addClass("is-active happyAPI"); 
     })
 
     fetch(giphyHappyURL, {
@@ -113,7 +113,7 @@ function getSadResponse() {
     .then(function (data) {
         var joke = data.joke;
         $("#content").append("<h3>" + joke + "<h3>");
-        moduleActive.addClass("is-active sadAPI"); 
+        modalActive.addClass("is-active sadAPI"); 
     })
 
     fetch(giphySadURL, {
@@ -148,7 +148,7 @@ function getCalmResponse() {
         var author = data.quote.author;
         $("#content").append("<h3>" + '"' + bodyQuote + '"' + "<h3>");
         $("#content").append("<h4>" + "-" + author + "<h4>");
-        moduleActive.addClass("is-active calmAPI"); 
+        modalActive.addClass("is-active calmAPI"); 
     })
 
     fetch(giphyCalmURL, {
@@ -168,11 +168,11 @@ function getCalmResponse() {
     })
 }; 
 
-if (moduleActive.classList.contains('angryAPI')) {
+if (modalActive.classList.contains('angryAPI')) {
     nextBtn.on("click", getAngryResponse);
-} else if (moduleActive.classList.contains('happyAPI')) {
+} else if (modalActive.classList.contains('happyAPI')) {
     nextBtn.on("click", getHappyResponse);
-} else if (moduleActive.classList.contains('sadAPI')) {
+} else if (modalActive.classList.contains('sadAPI')) {
     nextBtn.on("click", getSadResponse);
 } else {
     nextBtn.on("click", getCalmResponse);
@@ -180,6 +180,6 @@ if (moduleActive.classList.contains('angryAPI')) {
 
 // Close Modal function Event Listener
 closeModal.on("click", function() {
-    moduleActive.removeClass("is-active angryAPI happyAPI sadAPI calmAPI");
+    modalActive.removeClass("is-active angryAPI happyAPI sadAPI calmAPI");
     location.reload();
 });
