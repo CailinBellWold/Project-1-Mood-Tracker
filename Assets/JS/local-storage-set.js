@@ -30,10 +30,10 @@
 
 $('#spotify-frame').css('visibility', 'hidden');
 // document.querySelector('[="Play"]').click()
-
+$('.feeling-button').prop("disabled",true);
 
 $('.weather-button').on('click', function() {
-    // $('#weather').css('visibility', 'hidden');
+  $('.feeling-button').prop("disabled",false);
     $('.hidden').empty();
     let weatherButton = $(this).text();
     let weatherEl = weatherButton;
@@ -48,7 +48,7 @@ $('.weather-button').on('click', function() {
     } else {
         weatherEl = 'Sunny';
     }
-    console.log(weatherEl);
+
     
     let weatherDaily = weatherEl;
     
