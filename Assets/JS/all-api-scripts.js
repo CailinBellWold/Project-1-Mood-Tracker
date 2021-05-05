@@ -174,18 +174,20 @@ function getCalmResponse() {
 
 console.log(modalActive.prop('classList'));
 
-// function btnEventListener() {
-// }
-//ERROR: Cannot read property 'contains' of undefined
-if (modalActive.prop('classList').contains('angryAPI')) {
-    nextBtn.on("click", getAngryResponse);
-} else if (modalActive.prop('classList').contains('happyAPI')) {
-    nextBtn.on("click", getHappyResponse);
-} else if (modalActive.prop('classList').contains('sadAPI')) {
-    nextBtn.on("click", getSadResponse);
-} else {
-    nextBtn.on("click", getCalmResponse);
+function btnEventListener() {
+    
+    //ERROR: Cannot read property 'contains' of undefined
+    if (modalActive.prop('classList').contains('angryAPI')) {
+        nextBtn.on("click", getAngryResponse);
+    } else if (modalActive.prop('classList').contains('happyAPI')) {
+        nextBtn.on("click", getHappyResponse);
+    } else if (modalActive.prop('classList').contains('sadAPI')) {
+        nextBtn.on("click", getSadResponse);
+    } else {
+        nextBtn.on("click", getCalmResponse);
+
 };
+}
 
 // Close Modal function Event Listener
 closeModal.on("click", function() {
