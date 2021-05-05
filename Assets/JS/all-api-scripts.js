@@ -65,6 +65,7 @@ function getAngryResponse() {
         var alt = content.data[randomNum].title
         $("#content").append("<img src=" + img + "alt=" + alt + ">");
     })
+    // nextBtn.on("click", getAngryResponse);
 }; 
 
 // Happy Response
@@ -98,6 +99,7 @@ function getHappyResponse() {
         var alt = content.data[randomNum].title
         $("#content").append("<img src=" + img + "alt=" + alt + ">");
     })
+    nextBtn.on("click", getHappyResponse);
 }; 
 
 // Sad Response
@@ -131,6 +133,7 @@ function getSadResponse() {
         var alt = content.data[randomNum].title
         $("#content").append("<img src=" + img + "alt=" + alt + ">");
     })
+    nextBtn.on("click", getSadResponse);
 }; 
 
 // Calm Reponse
@@ -166,14 +169,19 @@ function getCalmResponse() {
         var alt = content.data[randomNum].title
         $("#content").append("<img src=" + img + "alt=" + alt + ">");
     })
+    // nextBtn.on("click", getCalmResponse);
 }; 
 
+console.log(modalActive.prop('classList'));
+
+// function btnEventListener() {
+// }
 //ERROR: Cannot read property 'contains' of undefined
-if (modalActive.classList.contains('angryAPI')) {
+if (modalActive.prop('classList').contains('angryAPI')) {
     nextBtn.on("click", getAngryResponse);
-} else if (modalActive.classList.contains('happyAPI')) {
+} else if (modalActive.prop('classList').contains('happyAPI')) {
     nextBtn.on("click", getHappyResponse);
-} else if (modalActive.classList.contains('sadAPI')) {
+} else if (modalActive.prop('classList').contains('sadAPI')) {
     nextBtn.on("click", getSadResponse);
 } else {
     nextBtn.on("click", getCalmResponse);
