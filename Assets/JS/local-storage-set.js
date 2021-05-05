@@ -33,7 +33,7 @@ $('#spotify-frame').css('visibility', 'hidden');
 
 
 $('.weather-button').on('click', function() {
-    $('#weather').css('visibility', 'hidden');
+    // $('#weather').css('visibility', 'hidden');
     $('.hidden').empty();
     let weatherButton = $(this).text();
     let weatherEl = weatherButton;
@@ -104,3 +104,16 @@ function onLoad() {
 }
 
 onLoad()
+
+$("#clear-data").on("click", clearData);
+$("#go-back").on("click", goBack);
+
+function goBack() {
+    window.history.back();
+}
+
+function clearData() {
+    localStorage.clear();
+    location.reload();
+}
+
