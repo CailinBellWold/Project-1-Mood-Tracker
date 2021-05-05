@@ -30,10 +30,10 @@
 
 $('#spotify-frame').css('visibility', 'hidden');
 // document.querySelector('[="Play"]').click()
-
+$('.feeling-button').prop("disabled",true);
 
 $('.weather-button').on('click', function() {
-    // $('#weather').css('visibility', 'hidden');
+  $('.feeling-button').prop("disabled",false);
     $('.hidden').empty();
     let weatherButton = $(this).text();
     let weatherEl = weatherButton;
@@ -48,7 +48,7 @@ $('.weather-button').on('click', function() {
     } else {
         weatherEl = 'Sunny';
     }
-    console.log(weatherEl);
+
     
     let weatherDaily = weatherEl;
     
@@ -80,7 +80,7 @@ $('.feeling-button').on('click', function(weatherDaily) {
         weather: weatherEl
     };
 
-    console.log();
+    
     dailyMood.push(newMood);
     localStorage.setItem('dailyMood',JSON.stringify(dailyMood));
 });
@@ -88,6 +88,10 @@ $('.feeling-button').on('click', function(weatherDaily) {
 
 function onLoad() {
 
+    if (localStorage.getItem("dailyMood") === null) {
+        console.log('LocalStorage is Empty');
+        return;
+    };
 
     let dailyMood = JSON.parse(localStorage.getItem("dailyMood") || []);
     dailyMood.forEach(function(user, index) {
@@ -103,13 +107,23 @@ function onLoad() {
     });
 }
 
-onLoad()
+
+
+=======
+onLoad();
+
 
 $("#clear-data").on("click", clearData);
 $("#go-back").on("click", goBack);
 
 function goBack() {
-    window.history.back();
+
+   
+=======
+    // window.history.back();
+    window.location.href = "https://chabivz.github.io/Daily-Checkins/";
+    
+
 }
 
 function clearData() {
