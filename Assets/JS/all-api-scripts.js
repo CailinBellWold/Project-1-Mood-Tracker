@@ -1,5 +1,4 @@
 //TO DO: 404 Responses, Get Next Button Set Up To Reset/Pull Current API, Filter for Cigarette and Booze content.
-
 // API Keys
 let giphyApiKey = 'c68nPrb4NwGEUnzP044FJ97Bl3RqTXi7';
 
@@ -65,7 +64,6 @@ function getAngryResponse() {
         var alt = content.data[randomNum].title
         $("#content").append("<img src=" + img + "alt=" + alt + ">");
     })
-    // nextBtn.on("click", getAngryResponse);
 }; 
 
 // Happy Response
@@ -99,7 +97,6 @@ function getHappyResponse() {
         var alt = content.data[randomNum].title
         $("#content").append("<img src=" + img + "alt=" + alt + ">");
     })
-    nextBtn.on("click", getHappyResponse);
 }; 
 
 // Sad Response
@@ -133,7 +130,6 @@ function getSadResponse() {
         var alt = content.data[randomNum].title
         $("#content").append("<img src=" + img + "alt=" + alt + ">");
     })
-    nextBtn.on("click", getSadResponse);
 }; 
 
 // Calm Reponse
@@ -169,25 +165,21 @@ function getCalmResponse() {
         var alt = content.data[randomNum].title
         $("#content").append("<img src=" + img + "alt=" + alt + ">");
     })
-    // nextBtn.on("click", getCalmResponse);
 }; 
 
 console.log(modalActive.prop('classList'));
 
-function btnEventListener() {
-    
-    //ERROR: Cannot read property 'contains' of undefined
+nextBtn.on("click", function() {
     if (modalActive.prop('classList').contains('angryAPI')) {
-        nextBtn.on("click", getAngryResponse);
+        getAngryResponse();
     } else if (modalActive.prop('classList').contains('happyAPI')) {
-        nextBtn.on("click", getHappyResponse);
+        getHappyResponse();
     } else if (modalActive.prop('classList').contains('sadAPI')) {
-        nextBtn.on("click", getSadResponse);
-    } else {
-        nextBtn.on("click", getCalmResponse);
-
-};
-}
+        getSadResponse();
+    } else if (modalActive.prop('classList').contains('calmAPI')) {
+        getCalmResponse();
+    }
+});
 
 // Close Modal function Event Listener
 closeModal.on("click", function() {
