@@ -104,3 +104,16 @@ function onLoad() {
 }
 
 onLoad()
+
+$("#clear-data").on("click", clearData);
+$("#go-back").on("click", goBack);
+
+function goBack() {
+    window.history.back();
+}
+
+function clearData() {
+    localStorage.clear();
+    location.reload();
+}
+
