@@ -1,21 +1,106 @@
-let emotionEl = document.querySelector('#feeling');
-let weatherEl = document.querySelector('#weather');
+// ---------------------------------------------------------------------------------------
 
-let emotion;
-let weather;
-let emotionHistory = [];
-let weatherHistory = [];
+// OLD LOCALSTORAGE
 
-emotionEl.onclick = function (event) {
-  event.preventDefault();
-  emotion = event.target.id;
-  emotionHistory.unshift(emotion);
-  localStorage.setItem('emotionHistory', JSON.stringify(emotionHistory));
-};
+// let emotionEl = document.querySelector('#feeling');
+// let weatherEl = document.querySelector('#weather');
 
-weatherEl.onclick = function (event) {
-  event.preventDefault();
-  weather = event.target.id;
-  weatherHistory.unshift(weather);
-  localStorage.setItem('weatherHistory', JSON.stringify(weatherHistory))
-};
+// let emotion;
+// let weather;
+// let emotionHistory = [];
+// let weatherHistory = [];
+
+// emotionEl.onclick = function (event) {
+//   event.preventDefault();
+//   emotion = event.target.id;
+//   emotionHistory.unshift(emotion);
+//   localStorage.setItem('emotionHistory', JSON.stringify(emotionHistory));
+// };
+
+// weatherEl.onclick = function (event) {
+//   event.preventDefault();
+//   weather = event.target.id;
+//   weatherHistory.unshift(weather);
+//   localStorage.setItem('weatherHistory', JSON.stringify(weatherHistory))
+// };
+
+// ---------------------------------------------------------------------------------------
+
+// NEW LOCAL STORAGE
+
+$('#spotify-frame').css('visibility', 'hidden');
+// document.querySelector('[="Play"]').click()
+
+
+$('.weather-button').on('click', function() {
+    $('#weather').css('visibility', 'hidden');
+    $('.hidden').empty();
+    let weatherButton = $(this).text();
+    let weatherEl = weatherButton;
+
+    
+    if (weatherEl == '❄️') {
+        weatherEl = 'Snow';
+    } else if (weatherEl == '☁️') {
+        weatherEl = 'Cloud'
+    } else if (weatherEl == '☔️') {
+        weatherEl = 'Rain';
+    } else {
+        weatherEl = 'Sunny';
+    }
+    console.log(weatherEl);
+    
+    let weatherDaily = weatherEl;
+    
+    // Bandaid 
+    const spanWeather = $('<div>').addClass('hidden');
+    const weatherSpan = $('<span>').addClass('span-hidden').text(`${weatherEl}`);
+    spanWeather.append(weatherSpan);
+    $('.footer').append(spanWeather)
+    $('.hidden').css('visibility', 'hidden');
+
+    return(weatherDaily);
+}); 
+
+
+$('.feeling-button').on('click', function(weatherDaily) {
+    let feelingEl =  $(this).text();
+    let weatherEl = $('.span-hidden').text();
+    
+    // let feelingDiv = $('#feeling');
+    // feelingDiv.style.display = 'none';
+    // $('#feeling').css('visibility', 'hidden');
+    
+    let dailyMood = JSON.parse(localStorage.getItem("dailyMood")) || [];
+    let moodEl = feelingEl;
+    let today = moment().format('YYYY-MM-DD');
+    let newMood = {
+        date: today,
+        mood: moodEl,
+        weather: weatherEl
+    };
+
+    console.log();
+    dailyMood.push(newMood);
+    localStorage.setItem('dailyMood',JSON.stringify(dailyMood));
+});
+
+
+function onLoad() {
+
+
+    let dailyMood = JSON.parse(localStorage.getItem("dailyMood") || []);
+    dailyMood.forEach(function(user, index) {
+        
+        const tableRow = $('<tr>').addClass('card-body');
+        const tdId = $('<td>').text(`${index}`);
+        const tdDate = $('<td>').text(`${user.date}`);
+        const tdMood = $('<td>').addClass('card-temp').text(`${user.mood}`);
+        const tdWeather = $('<td>').addClass('card-wind').text(`${user.weather}`);
+
+        tableRow.append(tdId, tdDate,tdMood, tdWeather);
+        $('#mood-history').append(tableRow);
+    });
+}
+
+onLoad()
