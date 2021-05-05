@@ -25,9 +25,10 @@
         </div>
     </header>
         <section class="container">
-            <div class="columns is-flex-wrap is-justify-content-space-evenly">
+            <div class="columns is-flex-wrap is-justify-content-space-evenly mt-3">
                 <div id="weather" class="on-click box is-align-self-center mx-2 p-6">
-                    <div class="subtitle is-4">What is the Weather Like?</div>
+                    <div class="subtitle is-4 has-text-weight-semibold">STEP 1:</div>
+                    <div class="subtitle is-4">What is the Weather Like Outside?</div>
                     <div class="buttons are-large">
                     <button id="sunny" class="sunny button is-medium is-fullwidth">☀️</button>
                     <button id="cloudy" class="cloudy button is-medium is-fullwidth">☁️</button>
@@ -35,8 +36,9 @@
                     <button id="snowing" class="snowing button is-medium is-fullwidth">❄️</button>
                     </div>  
                 </div>
-                <div id="feeling" class="on-click box is-align-self-center p-6 mx-3">
-                    <div class="subtitle is-4">How Are You Feeling Today</div>
+                <div id="feeling" class="on-click box is-align-self-center mx-2 p-6">
+                    <div class="subtitle is-4 has-text-weight-semibold">STEP 2:</div>
+                    <div class="subtitle is-4">How Are You Feeling Today?</div>
                     <div class="buttons are-large">
                     <button id="angry" class="angry button is-medium is-fullwidth">Angry</button>
                     <button id="happy" class="happy button is-medium is-fullwidth">Happy</button>
@@ -44,24 +46,24 @@
                     <button id="calm" class="calm button is-medium is-fullwidth">Calm</button>
                     </div>  
                 </div>
-                <div id="suggestions" class="image is-align-self-center p-6">
+                <!-- <div id="suggestions" class="image is-align-self-center p-6">
                     <div class="subtitle is-3">Suggestions For You
                     <div class="suggestions">
                         <figure class="image">
                             <img src="Assets/images/suggestions.jpeg">
-                        </figure>
+                        </figure> -->
                         <div class="modal">
                             <div class="modal-background"></div>
                             <div class="modal-card">
-                                <header class="modal-card-head">
-                                <p class="modal-card-title">Suggestions for You</p>
+                                <header class="modal-card-head cbw-card-header">
+                                <p class="modal-card-title is-size-2 cbw-card-header-txt">We Think You Will Like This!</p>
                                 <button class="modal-close" aria-label="close"></button>
                                 </header>
-                                <section class="modal-card-body">
+                                <section class="modal-card-body is-size-4">
                                     <div id="content"></div>
                                 </section>
                                 <footer class="modal-card-foot">
-                                    <button id="next" class="button">Next</button>
+                                    <a href="#" id="next" class="card-footer-item cbw-card-footer is-size-4">Next</a>
                             </footer>
                             </div>
                         </div>
@@ -94,8 +96,11 @@
     <!-- Script JS File -->
     <script src="Assets/JS/script.js"></script>
     <!--  GIF-APi-feature -->
-    <script src="./GIF.js"></script>
+    <!-- <script src="./GIF.js"></script> -->
     <!-- Sad API JS File -->
-    <script src="Assets/JS/sad.js"></script>
+    <!-- <script src="Assets/JS/sad.js"></script> -->
+
+    <!-- All API Scripts JS File-->
+    <script src="./Assets/JS/all-api-scripts.js"></script>
 </body>
 </html>
