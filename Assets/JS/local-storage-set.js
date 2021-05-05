@@ -33,7 +33,7 @@ $('#spotify-frame').css('visibility', 'hidden');
 
 
 $('.weather-button').on('click', function() {
-    $('#weather').css('visibility', 'hidden');
+    // $('#weather').css('visibility', 'hidden');
     $('.hidden').empty();
     let weatherButton = $(this).text();
     let weatherEl = weatherButton;
