@@ -1,6 +1,9 @@
 //TO DO: 404 Responses, Get Next Button Set Up To Reset/Pull Current API, Filter for Cigarette and Booze content.
 // API Keys
 let giphyApiKey = 'c68nPrb4NwGEUnzP044FJ97Bl3RqTXi7';
+var bodyquoteEl = document.querySelector("#bodyquote");
+var authorEl = document.querySelector("#author");
+var imgEl = document.querySelector("#GIF");
 
 // API / Jokes
 var jokesPunURL = 'https://v2.jokeapi.dev/joke/Pun?type=single&?format=json&?blacklistFlags=nsfw,religious,political,racist+,sexist,explicit&safe-mode';
@@ -45,7 +48,11 @@ function getAngryResponse() {
     })
     .then(function (data) {
         var joke = data.joke;
-        $("#content").append("<h3>" + joke + "<h3>");
+        bodyquoteEl.innerHTML = joke;
+       
+        
+        
+        bodyquoteEl.innerHTML = joke;
         modalActive.addClass("is-active angryAPI");
     })
 
@@ -59,10 +66,11 @@ function getAngryResponse() {
     })
 
     .then(function (content) {
+       
         var randomNum = Math.floor(Math.random() * content.data.length); 
-        var img = content.data[randomNum].images.downsized.url;
-        var alt = content.data[randomNum].title
-        $("#content").append("<img src=" + img + "alt=" + alt + ">");
+        
+        imgEl.src = content.data[randomNum].images.downsized.url
+        imgEl.alt = content.data[randomNum].title
     })
 }; 
 
@@ -78,7 +86,9 @@ function getHappyResponse() {
     })
     .then(function (data) {
         var joke = data.joke;
-        $("#content").append("<h3>" + joke + "<h3>");
+        bodyquoteEl.innerHTML = joke;
+       
+       
         modalActive.addClass("is-active happyAPI"); 
     })
 
@@ -92,10 +102,11 @@ function getHappyResponse() {
     })
 
     .then(function (content) {
+        
         var randomNum = Math.floor(Math.random() * content.data.length); 
-        var img = content.data[randomNum].images.downsized.url;
-        var alt = content.data[randomNum].title
-        $("#content").append("<img src=" + img + "alt=" + alt + ">");
+        
+        imgEl.src = content.data[randomNum].images.downsized.url
+        imgEl.alt = content.data[randomNum].title
     })
 }; 
 
@@ -111,7 +122,8 @@ function getSadResponse() {
     })
     .then(function (data) {
         var joke = data.joke;
-        $("#content").append("<h3>" + joke + "<h3>");
+        bodyquoteEl.innerHTML = joke;
+        
         modalActive.addClass("is-active sadAPI"); 
     })
 
@@ -125,10 +137,11 @@ function getSadResponse() {
     })
 
     .then(function (content) {
+        
         var randomNum = Math.floor(Math.random() * content.data.length); 
-        var img = content.data[randomNum].images.downsized.url;
-        var alt = content.data[randomNum].title
-        $("#content").append("<img src=" + img + "alt=" + alt + ">");
+        
+        imgEl.src = content.data[randomNum].images.downsized.url
+        imgEl.alt = content.data[randomNum].title
     })
 }; 
 
@@ -145,8 +158,9 @@ function getCalmResponse() {
     .then(function (data) {
         var bodyQuote = data.quote.body;
         var author = data.quote.author;
-        $("#content").append("<h3>" + '"' + bodyQuote + '"' + "<h3>");
-        $("#content").append("<h4>" + "-" + author + "<h4>");
+        bodyquoteEl.innerHTML = '"' + bodyQuote + '"';
+        authorEl.innerHTML= "-" + author;
+       
         modalActive.addClass("is-active calmAPI"); 
     })
 
@@ -161,9 +175,9 @@ function getCalmResponse() {
 
     .then(function (content) {
         var randomNum = Math.floor(Math.random() * content.data.length); 
-        var img = content.data[randomNum].images.downsized.url;
-        var alt = content.data[randomNum].title
-        $("#content").append("<img src=" + img + "alt=" + alt + ">");
+        
+        imgEl.src = content.data[randomNum].images.downsized.url;
+        imgEl.alt = content.data[randomNum].title;
     })
 }; 
 
