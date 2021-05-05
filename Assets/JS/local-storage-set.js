@@ -88,6 +88,10 @@ $('.feeling-button').on('click', function(weatherDaily) {
 
 function onLoad() {
 
+    if (localStorage.getItem("dailyMood") === null) {
+        console.log('LocalStorage is Empty');
+        return;
+    };
 
     let dailyMood = JSON.parse(localStorage.getItem("dailyMood") || []);
     dailyMood.forEach(function(user, index) {
@@ -103,13 +107,15 @@ function onLoad() {
     });
 }
 
-onLoad()
+onLoad();
 
 $("#clear-data").on("click", clearData);
 $("#go-back").on("click", goBack);
 
 function goBack() {
-    window.history.back();
+    // window.history.back();
+    window.location.href = "https://chabivz.github.io/Daily-Checkins/";
+    
 }
 
 function clearData() {
