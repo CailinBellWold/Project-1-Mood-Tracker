@@ -107,15 +107,23 @@ function onLoad() {
     });
 }
 
+
+
+=======
 onLoad();
+
 
 $("#clear-data").on("click", clearData);
 $("#go-back").on("click", goBack);
 
 function goBack() {
+
+   
+=======
     // window.history.back();
     window.location.href = "https://chabivz.github.io/Daily-Checkins/";
     
+
 }
 
 function clearData() {
