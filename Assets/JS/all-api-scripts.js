@@ -1,5 +1,4 @@
 //TO DO: 404 Responses, Get Next Button Set Up To Reset/Pull Current API, Filter for Cigarette and Booze content.
-
 // API Keys
 let giphyApiKey = 'c68nPrb4NwGEUnzP044FJ97Bl3RqTXi7';
 
