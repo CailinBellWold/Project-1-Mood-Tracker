@@ -80,7 +80,7 @@ $('.feeling-button').on('click', function(weatherDaily) {
         weather: weatherEl
     };
 
-    console.log();
+    
     dailyMood.push(newMood);
     localStorage.setItem('dailyMood',JSON.stringify(dailyMood));
 });
