@@ -108,8 +108,6 @@ function onLoad() {
 }
 
 
-
-=======
 onLoad();
 
 
@@ -118,12 +116,8 @@ $("#go-back").on("click", goBack);
 
 function goBack() {
 
-   
-=======
-    // window.history.back();
-    window.location.href = "https://chabivz.github.io/Daily-Checkins/";
+    window.history.back();
     
-
 }
 
 function clearData() {
