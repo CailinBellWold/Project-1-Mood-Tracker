@@ -1,4 +1,3 @@
-//TO DO: 404 Responses, Get Next Button Set Up To Reset/Pull Current API, Filter for Cigarette and Booze content.
 // API Keys
 let giphyApiKey = 'c68nPrb4NwGEUnzP044FJ97Bl3RqTXi7';
 var bodyquoteEl = document.querySelector("#bodyquote");
@@ -49,9 +48,6 @@ function getAngryResponse() {
     .then(function (data) {
         var joke = data.joke;
         bodyquoteEl.innerHTML = joke;
-       
-        
-        
         bodyquoteEl.innerHTML = joke;
         modalActive.addClass("is-active angryAPI");
     })
@@ -66,7 +62,7 @@ function getAngryResponse() {
     })
 
     .then(function (content) {
-       
+
         var randomNum = Math.floor(Math.random() * content.data.length); 
         
         imgEl.src = content.data[randomNum].images.downsized.url
@@ -87,8 +83,6 @@ function getHappyResponse() {
     .then(function (data) {
         var joke = data.joke;
         bodyquoteEl.innerHTML = joke;
-       
-       
         modalActive.addClass("is-active happyAPI"); 
     })
 
@@ -160,7 +154,6 @@ function getCalmResponse() {
         var author = data.quote.author;
         bodyquoteEl.innerHTML = '"' + bodyQuote + '"';
         authorEl.innerHTML= "-" + author;
-       
         modalActive.addClass("is-active calmAPI"); 
     })
 
@@ -181,8 +174,7 @@ function getCalmResponse() {
     })
 }; 
 
-console.log(modalActive.prop('classList'));
-
+// Event Listeners
 nextBtn.on("click", function() {
     if (modalActive.prop('classList').contains('angryAPI')) {
         getAngryResponse();
@@ -195,7 +187,6 @@ nextBtn.on("click", function() {
     }
 });
 
-// Close Modal function Event Listener
 closeModal.on("click", function() {
     modalActive.removeClass("is-active angryAPI happyAPI sadAPI calmAPI");
     location.reload();
