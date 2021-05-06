@@ -89,7 +89,6 @@ $('.feeling-button').on('click', function(weatherDaily) {
 function onLoad() {
 
     if (localStorage.getItem("dailyMood") === null) {
-        console.log('LocalStorage is Empty');
         return;
     };
 
@@ -97,7 +96,7 @@ function onLoad() {
     dailyMood.forEach(function(user, index) {
         
         const tableRow = $('<tr>').addClass('card-body');
-        const tdId = $('<td>').text(`${index}`);
+        const tdId = $('<td>').text(`${index+1}`);
         const tdDate = $('<td>').text(`${user.date}`);
         const tdMood = $('<td>').addClass('card-temp').text(`${user.mood}`);
         const tdWeather = $('<td>').addClass('card-wind').text(`${user.weather}`);
@@ -108,8 +107,6 @@ function onLoad() {
 }
 
 
-
-=======
 onLoad();
 
 
@@ -118,12 +115,8 @@ $("#go-back").on("click", goBack);
 
 function goBack() {
 
-   
-=======
-    // window.history.back();
-    window.location.href = "https://chabivz.github.io/Daily-Checkins/";
+    window.history.back();
     
-
 }
 
 function clearData() {
