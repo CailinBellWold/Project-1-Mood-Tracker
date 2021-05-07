@@ -36,7 +36,7 @@ The Mood Tracker is a tool for welcoming kids into a new virtual space and check
 
 ## Usage
 
-- Go to [Mood Tracker](https://chabivz.github.io/Daily-Checkins/)
+- Go to [Deployed Github Page](https://chabivz.github.io/Daily-Checkins/)
 - Look outside and refer to Step 1 to choose what the weather is like by pressing the weather emoji that best fits.
 - Check out the suggestions on the right for what you could do in that weather.
 - For Step 2 click a button that represents how you are feeling today.
