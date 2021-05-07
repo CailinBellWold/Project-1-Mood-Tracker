@@ -1,41 +1,29 @@
-// API Keys
 let giphyApiKey = 'c68nPrb4NwGEUnzP044FJ97Bl3RqTXi7';
 var bodyquoteEl = document.querySelector("#bodyquote");
 var authorEl = document.querySelector("#author");
 var imgEl = document.querySelector("#GIF");
-
-// API / Jokes
 var jokesPunURL = 'https://v2.jokeapi.dev/joke/Pun?type=single&?format=json&?blacklistFlags=nsfw,religious,political,racist+,sexist,explicit&safe-mode';
 var jokesJokeURL = 'https://v2.jokeapi.dev/joke/Any?type=single&?format=json&?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&safe-mode';
-
-// API / GIPHY
 var giphySadURL = 'https://api.giphy.com/v1/gifs/search?api_key=' + giphyApiKey + '&limit=30&rating=g&q=sad';
 let giphyAngryURL = 'https://api.giphy.com/v1/gifs/search?api_key=' + giphyApiKey + '&limit=30&rating=g&q=angry';
 let giphyHappyURL = 'https://api.giphy.com/v1/gifs/search?api_key=' + giphyApiKey + '&limit=30&rating=g&q=happy';
 let giphyCalmURL = 'https://api.giphy.com/v1/gifs/search?api_key=' + giphyApiKey + '&limit=30&rating=g&q=calm';
-
-// API / Quotes
 let quoteCalmURL = 'https://favqs.com/api/qotd';
-
-// Buttons
 let angryBtn = document.querySelector("#angry");
 let sadBtn = document.querySelector("#sad");
 let calmBtn = document.querySelector("#calm");
 let happyBtn = document.querySelector("#happy");
 
-// Event Listeners
 angryBtn.addEventListener('click', getAngryResponse);
 happyBtn.addEventListener('click', getHappyResponse);
 sadBtn.addEventListener('click', getSadResponse);
 calmBtn.addEventListener('click', getCalmResponse);
 
-// Modal
 let textInput = $(".text-one");
 let modalActive = $(".modal")
 let closeModal = $(".modal-close");
 let nextBtn = $("#next");
 
-// Angry Response
 function getAngryResponse() {
     fetch(jokesJokeURL, {
         method: 'GET', 
@@ -70,7 +58,6 @@ function getAngryResponse() {
     })
 }; 
 
-// Happy Response
 function getHappyResponse() {
     fetch(jokesJokeURL, {
         method: 'GET', 
@@ -104,7 +91,6 @@ function getHappyResponse() {
     })
 }; 
 
-// Sad Response
 function getSadResponse() {
     fetch(jokesPunURL, {
         method: 'GET', 
@@ -139,7 +125,6 @@ function getSadResponse() {
     })
 }; 
 
-// Calm Reponse
 function getCalmResponse() {
     fetch(quoteCalmURL, {
         method: 'GET', 
@@ -174,7 +159,6 @@ function getCalmResponse() {
     })
 }; 
 
-// Event Listeners
 nextBtn.on("click", function() {
     if (modalActive.prop('classList').contains('angryAPI')) {
         getAngryResponse();
