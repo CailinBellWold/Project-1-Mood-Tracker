@@ -5,7 +5,9 @@ function displayTime() {
     timeDisplayEl.text(rightNow);
 }
 
-setInterval(displayTime, 1000);
+// setInterval(displayTime, 1000);
+
+displayTime();
 
 $("#sunny").on("click", function() {
     $("body").removeClass("gray").removeClass("blue").removeClass("gray-white").addClass("yellow");
