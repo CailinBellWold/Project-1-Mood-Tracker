@@ -1,39 +1,9 @@
-// ---------------------------------------------------------------------------------------
-
-// OLD LOCALSTORAGE
-
-// let emotionEl = document.querySelector('#feeling');
-// let weatherEl = document.querySelector('#weather');
-
-// let emotion;
-// let weather;
-// let emotionHistory = [];
-// let weatherHistory = [];
-
-// emotionEl.onclick = function (event) {
-//   event.preventDefault();
-//   emotion = event.target.id;
-//   emotionHistory.unshift(emotion);
-//   localStorage.setItem('emotionHistory', JSON.stringify(emotionHistory));
-// };
-
-// weatherEl.onclick = function (event) {
-//   event.preventDefault();
-//   weather = event.target.id;
-//   weatherHistory.unshift(weather);
-//   localStorage.setItem('weatherHistory', JSON.stringify(weatherHistory))
-// };
-
-// ---------------------------------------------------------------------------------------
-
-// NEW LOCAL STORAGE
-
 $('#spotify-frame').css('visibility', 'hidden');
-// document.querySelector('[="Play"]').click()
+
 $('.feeling-button').prop("disabled",true);
 
 $('.weather-button').on('click', function() {
-  $('.feeling-button').prop("disabled",false);
+    $('.feeling-button').prop("disabled",false);
     $('.hidden').empty();
     let weatherButton = $(this).text();
     let weatherEl = weatherButton;
@@ -48,7 +18,6 @@ $('.weather-button').on('click', function() {
     } else {
         weatherEl = 'Sunny';
     }
-
     
     let weatherDaily = weatherEl;
     
@@ -66,11 +35,6 @@ $('.weather-button').on('click', function() {
 $('.feeling-button').on('click', function(weatherDaily) {
     let feelingEl =  $(this).text();
     let weatherEl = $('.span-hidden').text();
-    
-    // let feelingDiv = $('#feeling');
-    // feelingDiv.style.display = 'none';
-    // $('#feeling').css('visibility', 'hidden');
-    
     let dailyMood = JSON.parse(localStorage.getItem("dailyMood")) || [];
     let moodEl = feelingEl;
     let today = moment().format('YYYY-MM-DD');
