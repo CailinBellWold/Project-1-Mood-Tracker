@@ -1,12 +1,11 @@
-var now = moment()
-var currentDayEl = $(".time");
+var timeDisplayEl = $(".time");
 
-function displayDate() {
-    var date = now.format("dddd, MMMM Do YYYY, h:mm a");
-    currentDayEl.text(date);
+function displayTime() {
+    var rightNow = moment().format('dddd, MMMM Do, YYYY [at] hh:mm:ss a');
+    timeDisplayEl.text(rightNow);
 }
 
-displayDate();
+setInterval(displayTime, 1000);
 
 $("#sunny").on("click", function() {
     $("body").removeClass("gray").removeClass("blue").removeClass("gray-white").addClass("yellow");
