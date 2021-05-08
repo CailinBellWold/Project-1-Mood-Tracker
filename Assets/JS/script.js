@@ -1,11 +1,11 @@
 var timeDisplayEl = $(".time");
 
 function displayTime() {
-    var rightNow = moment().format('dddd, MMMM Do, YYYY [at] hh:mm:ss a');
+    var rightNow = moment().format('dddd, MMMM Do, YYYY [at] hh:mm a');
     timeDisplayEl.text(rightNow);
 }
 
-// setInterval(displayTime, 1000);
+setInterval(displayTime, 1000);
 
 displayTime();
 
